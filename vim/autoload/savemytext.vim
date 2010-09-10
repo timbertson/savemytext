@@ -1,56 +1,18 @@
-
-function! savemytext#SmtEdit(url) abort
-	if a:url=="<afile>"
-		let file=expand(a:url)
-	else
-		let file=a:url
-	endif
-	py SaveMyText().onload()
-endfunction
-
-function! savemytext#SmtWrite (url) abort
-	if a:url=="<afile>"
-		let file=expand(a:url)
-	else
-		let file=a:url
-	endif
-	py SaveMyText().onsave()
-	set nomodified
-endf
-
-function! savemytext#SmtList (user) abort
-	let g:smtformat="%f"
-	let efm_bak=&efm
-	try
-		let &efm=g:smtformat
-		py SaveMyText(vim.eval("a:user")).list()
-	finally
-		let &efm=efm_bak
-	endtry
-endf
-
-function! savemytext#SmtDelete (user, text) abort
-	py SaveMyText(vim.eval("a:user")).remove(vim.eval("a:text"))
-endf
-
-" ---------
-
 python << PY
 import sys, os, re
 import commands
 try:
 	import savemytext
 except ImportError:
-	# if you don't put it in your PYTHONPATH, you hopefully use zeroinstall :)
-	smtpath = commands.getoutput("0launch  'http://gfxmonk.net/dist/0install/0find.xml' 'http://gfxmonk.net/dist/0install/savemytext.xml'")
+	# if you don't put it in your PYTHONPATH, you should use zeroinstall :)
+	smtpath = commands.getoutput("0launch -c 'http://gfxmonk.net/dist/0install/0find.xml' 'http://gfxmonk.net/dist/0install/savemytext.xml'")
+	print smtpath
 	if not smtpath in sys.path:
 		sys.path.insert(0, smtpath)
 	# how about now?
 	import savemytext
 import savemytext.api
 import vim
-
-print "loaded!"
 
 class SaveMyText(object):
 	def __init__(self, user=None):
@@ -101,3 +63,40 @@ class SaveMyText(object):
 			#self.smt.remove(doc)
 			print "REMOVED: %s" % (doc['title'],)
 PY
+
+" -----------------------------
+
+function! savemytext#SmtEdit(url) abort
+	if a:url=="<afile>"
+		let file=expand(a:url)
+	else
+		let file=a:url
+	endif
+	py SaveMyText().onload()
+endfunction
+
+function! savemytext#SmtWrite (url) abort
+	if a:url=="<afile>"
+		let file=expand(a:url)
+	else
+		let file=a:url
+	endif
+	py SaveMyText().onsave()
+	set nomodified
+endf
+
+function! savemytext#SmtList (user) abort
+	let g:smtformat="%f"
+	let efm_bak=&efm
+	try
+		let &efm=g:smtformat
+		py SaveMyText(vim.eval("a:user")).list()
+	finally
+		let &efm=efm_bak
+	endtry
+endf
+
+function! savemytext#SmtDelete (user, text) abort
+	py SaveMyText(vim.eval("a:user")).remove(vim.eval("a:text"))
+endf
+

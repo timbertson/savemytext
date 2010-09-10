@@ -184,7 +184,7 @@ class Editor(object):
 	def do_list(self, refresh=True):
 		if refresh:
 			self.texts.refresh()
-		if self.interactively():
+		if self.interactively:
 			print "-" * 40
 		print self.texts
 

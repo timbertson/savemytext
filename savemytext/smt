@@ -4,7 +4,7 @@ import logging
 
 from editor import Editor
 
-logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s', datefmt='', stream=sys.stderr)
+logging.basicConfig(level=logging.INFO, format='%(message)s', datefmt='', stream=sys.stderr)
 
 if __name__ == '__main__':
 	try:
