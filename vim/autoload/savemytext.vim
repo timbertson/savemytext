@@ -6,7 +6,6 @@ try:
 except ImportError:
 	# if you don't put it in your PYTHONPATH, you should use zeroinstall :)
 	smtpath = commands.getoutput("0launch -c 'http://gfxmonk.net/dist/0install/0find.xml' 'http://gfxmonk.net/dist/0install/savemytext.xml'")
-	print smtpath
 	if not smtpath in sys.path:
 		sys.path.insert(0, smtpath)
 	# how about now?
