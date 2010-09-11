@@ -1,13 +1,13 @@
+" let s:debug=1
 if exists("s:seen") && !exists("s:debug")
 	finish
 endif
 
 let s:seen=1
-" let s:debug=1
 command! -nargs=1 SmtEdit call savemytext#SmtEdit(<f-args>)
 command! -nargs=1 SmtWrite call savemytext#SmtWrite(<f-args>)
-command! -nargs=1 SmtList call savemytext#SmtList(<f-args>)
-command! -nargs=+ SmtDelete call savemytext#SmtDelete(<f-args>)
+command! -nargs=1 Smt call savemytext#SmtList(<f-args>)
+command! -nargs=0 SmtDelete call savemytext#SmtDelete()
 augroup Smt
 	autocmd!
 	au BufReadCmd   smt:*,smt:*/* SmtEdit <afile>

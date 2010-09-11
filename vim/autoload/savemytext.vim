@@ -55,12 +55,16 @@ class SaveMyText(object):
 		vim.command('cgetfile %s' % (filename,))
 		vim.command('copen')
 	
-	def remove(self, text):
+	def remove(self):
+		_, text = self.parse()
 		doc = self.get_doc(text)
 		title = doc['title'].replace("\"","")
-		if vim.eval('confirm("really remove %s?", "yes\nno")' % (title,)) == 1:
-			#self.smt.remove(doc)
+		if int(vim.eval('confirm("really remove %s?", "yes\nno")' % (title,))) == 1:
+			self.smt.remove(doc)
 			print "REMOVED: %s" % (doc['title'],)
+			vim.command(":q")
+		else:
+			print "Cancelled."
 PY
 
 " -----------------------------
@@ -95,7 +99,8 @@ function! savemytext#SmtList (user) abort
 	endtry
 endf
 
-function! savemytext#SmtDelete (user, text) abort
-	py SaveMyText(vim.eval("a:user")).remove(vim.eval("a:text"))
+function! savemytext#SmtDelete () abort
+	let file=expand("%")
+	py SaveMyText().remove()
 endf
 

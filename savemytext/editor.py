@@ -90,6 +90,9 @@ class Editor(object):
 		except UsageError:
 			parser.print_usage()
 			sys.exit(1)
+		except AppError, e:
+			print e
+			sys.exit(2)
 	
 	def find_by_regex(self, regex):  return self.texts.find(regex)
 	def find_by_exact(self, title):  return self.texts.get(title)
@@ -239,7 +242,8 @@ class Editor(object):
 		def read_from_file(filepath):
 			logging.debug("reading content from file")
 			if filepath == '-':
-				logging.info("reading input from STDIN")
+				if sys.stdin.isatty():
+					logging.info("reading input from STDIN")
 				return sys.stdin.read()
 			with open(filepath, 'r') as f:
 				return f.read()
