@@ -10,34 +10,26 @@
 		user texts stored on savemytext.appspot.com
 	</description>
 	<group main="savemytext/smt">
-		<requires interface="http://gfxmonk.net/dist/0install/appengine-auth.xml">
-			<environment insert="" mode="prepend" name="PYTHONPATH"/>
-		</requires>
-
+		<requires interface="http://gfxmonk.net/dist/0install/appengine-auth.xml"/>
 		<implementation id="sha1new=a53c419b37e97a59c69f3d46a1863d5ba6174e25" released="2010-09-05" version="0.1">
-		
-    <manifest-digest sha256="1b7b88463562f213208843e41ccbfcc0c1405274ecb179c002506932816b6fe6"/>
-    <archive href="http://gfxmonk.net/dist/0install/savemytext/savemytext-0.1.tgz" size="10887"/>
-  </implementation>
-
+			<manifest-digest sha256="1b7b88463562f213208843e41ccbfcc0c1405274ecb179c002506932816b6fe6"/>
+			<archive href="http://gfxmonk.net/dist/0install/savemytext/savemytext-0.1.tgz" size="10887"/>
+		</implementation>
 		<implementation id="sha1new=6a2567d9edc1f6d54b408e3a23bc6e7ef5b4fee8" released="2010-09-05" version="0.1.1">
-    <manifest-digest sha256="6c96f823c479b80b566bba1e73727768ac79dd5e91ab62125d109410e0a000d6"/>
-    <archive href="http://gfxmonk.net/dist/0install/savemytext/savemytext-0.1.1.tgz" size="11073"/>
-  </implementation>
-
+			<manifest-digest sha256="6c96f823c479b80b566bba1e73727768ac79dd5e91ab62125d109410e0a000d6"/>
+			<archive href="http://gfxmonk.net/dist/0install/savemytext/savemytext-0.1.1.tgz" size="11073"/>
+		</implementation>
 		<implementation id="sha1new=ae449bcbff71ba51057db1140f1b956b0e2f1d34" released="2010-09-06" version="0.1.2">
-    <manifest-digest sha256="fe80497f1cb2df96f5d7b48b473fdd247fedc91b414eb0d07babc679b765ed1f"/>
-    <archive href="http://gfxmonk.net/dist/0install/savemytext/savemytext-0.1.2.tgz" size="11219"/>
-  </implementation>
-
+			<manifest-digest sha256="fe80497f1cb2df96f5d7b48b473fdd247fedc91b414eb0d07babc679b765ed1f"/>
+			<archive href="http://gfxmonk.net/dist/0install/savemytext/savemytext-0.1.2.tgz" size="11219"/>
+		</implementation>
 		<implementation id="sha1new=5f2bc500069cca5301bf1503ba3597e52a977b7b" released="2010-09-11" version="0.1.3">
-    <manifest-digest sha256="245b89ae5958973fb62fae2611c78710afbbea6235afdcee0b42c441268a7db4"/>
-    <archive href="http://gfxmonk.net/dist/0install/savemytext/savemytext-0.1.3.tgz" size="11625"/>
-  </implementation>
-
+			<manifest-digest sha256="245b89ae5958973fb62fae2611c78710afbbea6235afdcee0b42c441268a7db4"/>
+			<archive href="http://gfxmonk.net/dist/0install/savemytext/savemytext-0.1.3.tgz" size="11625"/>
+		</implementation>
 		<implementation id="sha1new=10e54b0bed64e2dabe49e584a78ce6b27a96d39b" released="2010-09-11" version="0.1.4">
-    <manifest-digest sha256="e86c346a70b16a56f0d266a66e7891b9eee5e7080629213dcfa556af780cca83"/>
-    <archive href="http://gfxmonk.net/dist/0install/savemytext/savemytext-0.1.4.tgz" size="11689"/>
-  </implementation>
+			<manifest-digest sha256="e86c346a70b16a56f0d266a66e7891b9eee5e7080629213dcfa556af780cca83"/>
+			<archive href="http://gfxmonk.net/dist/0install/savemytext/savemytext-0.1.4.tgz" size="11689"/>
+		</implementation>
 	</group>
 </interface>
