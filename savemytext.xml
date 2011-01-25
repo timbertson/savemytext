@@ -11,6 +11,7 @@
 	</description>
 	<group main="savemytext/smt">
 		<requires interface="http://gfxmonk.net/dist/0install/appengine-auth.xml"/>
+		<environment insert="" mode="prepend" name="PYTHONPATH"/>
 		<implementation id="sha1new=a53c419b37e97a59c69f3d46a1863d5ba6174e25" released="2010-09-05" version="0.1">
 			<manifest-digest sha256="1b7b88463562f213208843e41ccbfcc0c1405274ecb179c002506932816b6fe6"/>
 			<archive href="http://gfxmonk.net/dist/0install/savemytext/savemytext-0.1.tgz" size="10887"/>
